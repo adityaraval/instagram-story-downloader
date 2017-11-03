@@ -17,7 +17,8 @@ module.exports = {
         var values = req.allParams();
         var storyID = values.storyID;
         var userID = values.userID;
-        getStories({ id: storyID, userid: userID, sessionid: '' }).then(stories => {
+        var sessionID = values.sessionID;
+        getStories({ id: storyID, userid: userID, sessionid: sessionID }).then(stories => {
             res.ok(stories)       
         });
     }
